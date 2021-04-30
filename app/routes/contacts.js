@@ -1,8 +1,11 @@
 import Route from '@ember/routing/route';
+import { hash } from 'rsvp';
 
 export default Ember.Route.extend({
   model: function () {
-    return this.store.findAll('contact');
+    return hash({
+      contacts: this.store.findAll('contact'),
+    });
   },
 });
 
