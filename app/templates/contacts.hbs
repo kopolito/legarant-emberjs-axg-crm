@@ -1,8 +1,0 @@
-<h1>Contacts</h1>>
-{{!-- {{page-title "Contacts"}} --}}
-{{outlet}}
-<ul class="contactList">
-  {{#each this.model.contacts as |contact|}}
-    <li>{{#link-to "contact.show" contact }}{{contact.FistName}} {{contact.LastName}}{{/link-to}}</li>
-  {{/each}}
-</ul>

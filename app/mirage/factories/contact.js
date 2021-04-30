@@ -1,5 +1,9 @@
 import Mirage from 'ember-cli-mirage';
 
-export default Mirage.Factory.extend(
-  {firstName: 'MyString', lastName: 'MyString', email: 'MyString', phone: 'MyString', mobilePhone: 'MyString' }
-);
+export default Mirage.Factory.extend({
+  FirstName: 'MyString',
+  LastName: 'MyString',
+  Email: 'MyString',
+  Phone: 'MyString',
+  MobilePhone: 'MyString',
+});
