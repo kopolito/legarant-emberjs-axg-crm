@@ -1,7 +1,13 @@
 {{page-title "EmberCrm"}}
 
 {{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
 
+{{!-- Feel free to remove this! --}}
+<LinkTo @route="index">
+  <img class="logo">
+</LinkTo>
+
+<nav>
+  <LinkTo @route="contact">Contacts</LinkTo>
+</nav>
 {{outlet}}
