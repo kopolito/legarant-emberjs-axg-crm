@@ -10,5 +10,6 @@ Router.map(function () {
   this.route('contact', { path: '/contact' }, function () {
     this.route('new');
     this.route('show', { path: '/:contact_id' });
+    this.route('edit', { path: '/:contact_id/edit' });
   });
 });
