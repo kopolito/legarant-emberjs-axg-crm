@@ -1,32 +1,41 @@
 {{page-title "Show"}}
 <h2>Fiche Contact : édition</h2>
 {{#link-to "contact.show" this.model }}Back{{/link-to}}
-  <p>
-    <strong>Id:</strong>
-    {{ this.model.id }}
-  </p>
+  <form {{action 'edit' on="submit" }}>
 
-  <p>
-    <strong>Firstname:</strong>
-    {{ this.model.FirstName }}
-  </p>
+    <p>
+      <label for="FirstName">FirstName</label>
+      <Input @id="FirstName" @type="text" @value={{this.model.FirstName}} />
+    </p>
 
-  <p>
-    <strong>Lastname:</strong>
-    {{ this.model.LastName }}
-  </p>
+    <p>
+      <label for="LastName">LastName</label>
+      <Input @id="LastName" @type="text" @value={{this.model.LastName}} />
+    </p>
 
-  <p>
-    <strong>Email:</strong>
-    {{ this.model.Email }}
-  </p>
+    <p>
+      <label for="Email">Email</label>
+      <Input @id="Email" @type="email" @value={{this.model.Email}} />
+    </p>
 
-  <p>
-    <strong>Phone:</strong>
-    {{ this.model.Phone }}
-  </p>
+    <p>
+      <label for="Phone">Phone</label>
+      <Input @id="Phone" @type="text" @value={{this.model.Phone}} />
+    </p>
 
-  <p>
-    <strong>Mobilephone:</strong>
-    {{ this.model.MobilePhone }}
-  </p>
+    <p>
+      <label for="MobilePhone">MobilePhone</label>
+      <Input @id="MobilePhone" @type="text" @value={{this.model.MobilePhone}} />
+    </p>
+
+    <button {{action "edit" this.model}}>Valider</button>
+
+    {{!-- 
+    {{input type="password" value=newPassword placeholder="reset password"}}<br>
+    {{#if newPassword}}
+      
+      {{#if passwordOK}}
+        <button>Reset</button>
+      {{/if}}
+    {{/if}} --}}
+  </form>

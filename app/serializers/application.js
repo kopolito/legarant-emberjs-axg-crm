@@ -51,42 +51,6 @@ export default class ApplicationSerializer extends JSONAPISerializer {
       }
       console.log('RESULT AFTER', JSON.stringify(result));
       payload = result;
-      // payload = {
-      //   data: [
-      //     {
-      //       id: '0031x000016gsgrAAA',
-      //       type: 'Contacts',
-      //       attributes: {
-      //         Id: '0031x000016gsgrAAA',
-      //         IsDeleted: false,
-      //         LastName: 'dgfjgfvhdfh',
-      //         FirstName: 'dgfsscdfgdf',
-      //         Name: 'dgfsscdfgdf dgfjgfvhdfh',
-      //         OtherAddress: null,
-      //         MailingAddress: null,
-      //         Phone: '01789456124',
-      //         MobilePhone: '0678945615',
-      //         Email: 'xvghfvcfyghdv@domaine.com',
-      //         OwnerId: '0051x000006SeBhAAK',
-      //         HasOptedOutOfEmail: false,
-      //         HasOptedOutOfFax: false,
-      //         DoNotCall: false,
-      //         CreatedDate: '2021-04-30T07:03:49.000+0000',
-      //         CreatedById: '0051x000006SeBhAAK',
-      //         LastModifiedDate: '2021-04-30T07:03:49.000+0000',
-      //         LastModifiedById: '0051x000006SeBhAAK',
-      //         SystemModstamp: '2021-04-30T07:03:49.000+0000',
-      //         LastViewedDate: '2021-04-30T07:03:49.000+0000',
-      //         LastReferencedDate: '2021-04-30T07:03:49.000+0000',
-      //         IsEmailBounced: false,
-      //         PhotoUrl: '/services/images/photo/0031x000016gsgrAAA',
-      //         CleanStatus: 'Pending',
-      //         Active__c: true,
-      //         ExtId__c: 'xvghfvcfyghdv@domaine.com',
-      //       },
-      //     },
-      //   ],
-      // };
     }
     console.log('PAYLOAD AFTER', JSON.stringify(payload));
     //
@@ -105,49 +69,12 @@ export default class ApplicationSerializer extends JSONAPISerializer {
       requestType
     );
   }
+  serialize(snapshot, options) {
+    let json = super.serialize(...arguments);
+    let result = {};
+    for (let i in json.data.attributes) {
+      result[i] = json.data.attributes[i];
+    }
+    return result;
+  }
 }
-
-// {
-//   "data": {
-//     "id": "1",
-//     "type": "product",
-//     "attributes": {
-//       "name": "My Product",
-//       "amount": 100,
-//       "currency": "SEK"
-//     }
-//   }
-// }
-
-// {
-//   "attributes": {
-//       "type": "Contact",
-//       "url": "/services/data/v51.0/sobjects/Contact/0031x000016gsgrAAA"
-//   },
-//   "Id": "0031x000016gsgrAAA",
-//   "IsDeleted": false,
-//   "LastName": "dgfjgfvhdfh",
-//   "FirstName": "dgfsscdfgdf",
-//   "Name": "dgfsscdfgdf dgfjgfvhdfh",
-//   "OtherAddress": null,
-//   "MailingAddress": null,
-//   "Phone": "01789456124",
-//   "MobilePhone": "0678945615",
-//   "Email": "xvghfvcfyghdv@domaine.com",
-//   "OwnerId": "0051x000006SeBhAAK",
-//   "HasOptedOutOfEmail": false,
-//   "HasOptedOutOfFax": false,
-//   "DoNotCall": false,
-//   "CreatedDate": "2021-04-30T07:03:49.000+0000",
-//   "CreatedById": "0051x000006SeBhAAK",
-//   "LastModifiedDate": "2021-04-30T07:03:49.000+0000",
-//   "LastModifiedById": "0051x000006SeBhAAK",
-//   "SystemModstamp": "2021-04-30T07:03:49.000+0000",
-//   "LastViewedDate": "2021-04-30T07:03:49.000+0000",
-//   "LastReferencedDate": "2021-04-30T07:03:49.000+0000",
-//   "IsEmailBounced": false,
-//   "PhotoUrl": "/services/images/photo/0031x000016gsgrAAA",
-//   "CleanStatus": "Pending",
-//   "Active__c": true,
-//   "ExtId__c": "xvghfvcfyghdv@domaine.com"
-// }
