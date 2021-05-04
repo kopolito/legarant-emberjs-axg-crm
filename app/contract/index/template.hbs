@@ -1,0 +1,8 @@
+{{page-title "Index"}}
+{{outlet}}
+<h2>Liste</h2>
+<ul class="contractList">
+  {{#each this.model as |contract index|}}
+    <li>{{#link-to "contract.show" contract }}{{contract.id}}{{/link-to}}</li>
+  {{/each}}
+</ul>
