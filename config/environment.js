@@ -20,8 +20,8 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      usingCors: false,
-      corsWithCreds: false,
+      usingCors: true,
+      corsWithCreds: true,
       //apiURL: null,
     },
   };
@@ -30,7 +30,7 @@ module.exports = function (environment) {
     ENV.APP.ORG_URL =
       'https://noodles-dary-5577-dev-ed.cs100.my.salesforce.com';
     ENV.APP.BEARER_TOKEN =
-      'Bearer 00D1x0000008fy7!AREAQJG3aw71PJT0mkIc3JMH.jUpkySp6o7zeg9EN4.YRCuAHO9RRRQ2rd8S3gJ9Jp5S2zKRFGuLidFeGz3QPL8Zf.YI366_';
+      'Bearer 00D1x0000008fy7!AREAQF2oYhBMfJXvpn.tpVZOY90pnqRkdrP.96hQB9PQ_e_BAKumimduWJ9w1enQVs9h9ZuVAnIyOVBOQ.XedJYIHDoJQket';
     ENV.APP.ACCESS_TOKEN_URL = 'https://test.salesforce.com';
     ENV.APP.ACCESS_USERNAME = 'test-rv3yhvaanakn@example.com';
     ENV.APP.ACCESS_PASSWORD = '#sn&Amg3_Bp5fIrEVV2F2pjkvltrgMX2m5hXqP';
