@@ -7,7 +7,7 @@
 
 <p>
   <strong>AccountId:</strong>
-  {{ this.model.AccountId }}
+  {{#link-to "account.show" this.model.AccountId }}{{this.model.AccountId}}{{/link-to}}
 </p>
 
 <p>
