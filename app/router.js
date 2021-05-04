@@ -15,4 +15,7 @@ Router.map(function () {
   this.route('account', function () {
     this.route('show', { path: '/:account_id' });
   });
+  this.route('contract', function () {
+    this.route('show', { path: '/:contract_id' });
+  });
 });
