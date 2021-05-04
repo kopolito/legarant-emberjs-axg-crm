@@ -12,4 +12,7 @@ Router.map(function () {
     this.route('show', { path: '/:contact_id' });
     this.route('edit', { path: '/:contact_id/edit' });
   });
+  this.route('account', function () {
+    this.route('show', { path: '/:account_id' });
+  });
 });

@@ -1,0 +1,8 @@
+{{page-title "Index"}}
+{{outlet}}
+<h2>Liste</h2>
+<ul class="accountList">
+  {{#each this.model as |account index|}}
+    <li>{{#link-to "account.show" account }}{{account.Name}}{{/link-to}}</li>
+  {{/each}}
+</ul>

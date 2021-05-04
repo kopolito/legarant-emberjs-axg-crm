@@ -49,17 +49,11 @@ export default class ApplicationSerializer extends JSONAPISerializer {
           }
         }
       }
-      console.log('RESULT AFTER', JSON.stringify(result));
+      //console.log('RESULT AFTER', JSON.stringify(result));
       payload = result;
     }
-    console.log('PAYLOAD AFTER', JSON.stringify(payload));
+    //console.log('PAYLOAD AFTER', JSON.stringify(payload));
     //
-
-    // payload.data.attributes.amount = payload.data.attributes.cost.amount;
-    // payload.data.attributes.currency = payload.data.attributes.cost.currency;
-
-    // delete payload.data.attributes.cost;
-
     //return super.normalizeResponse(...arguments);
     return super.normalizeResponse(
       store,

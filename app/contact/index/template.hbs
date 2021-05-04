@@ -3,6 +3,6 @@
 <h2>Liste</h2>
 <ul class="contactList">
   {{#each this.model as |contact index|}}
-    <li>Contact {{index}} {{#link-to "contact.show" contact }}{{contact.FirstName}}-{{contact.LastName}}{{/link-to}}</li>
+    <li>{{#link-to "contact.show" contact }}{{contact.FirstName}}-{{contact.LastName}}{{/link-to}}</li>
   {{/each}}
 </ul>

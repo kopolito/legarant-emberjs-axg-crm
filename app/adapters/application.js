@@ -8,9 +8,6 @@ export default class ApplicationAdapter extends RESTAdapter {
   namespace = 'services/apexrest';
   headers = {
     Authorization: ENV.APP.BEARER_TOKEN,
-    //Origin: ENV.APP.ORG_URL,
-    'Access-Control-Allow-Origin': 'http://localhost:4200',
-    'Access-Control-Allow-Credentials': true,
   };
   // ajax(url, method, hash) {
   //   if (ENV.APP.usingCors) {
