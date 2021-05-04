@@ -60,6 +60,13 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.APP.ORG_URL = process.env.ORG_URL;
+    ENV.APP.BEARER_TOKEN = process.env.BEARER_TOKEN;
+    ENV.APP.ACCESS_TOKEN_URL = process.env.ACCESS_TOKEN_URL;
+    ENV.APP.ACCESS_USERNAME = process.env.ACCESS_USERNAME;
+    ENV.APP.ACCESS_PASSWORD = process.env.ACCESS_PASSWORD;
+    ENV.APP.ACCESS_CLIENT_ID = process.env.ACCESS_CLIENT_ID;
+    ENV.APP.ACCESS_CLIENT_SECRET = process.env.ACCESS_CLIENT_SECRET;
   }
 
   return ENV;
